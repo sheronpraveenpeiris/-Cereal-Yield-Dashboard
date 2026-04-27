@@ -114,3 +114,4 @@ st.write("""
 - The global average indicates steady improvement in food production.
 - The top-performing countries demonstrate advanced agricultural efficiency.
 """)
+#Updated code structure and fixed formatting
