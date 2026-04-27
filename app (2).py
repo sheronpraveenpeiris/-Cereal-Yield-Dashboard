@@ -1,3 +1,4 @@
+# Import necessary Librkes
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -18,7 +19,7 @@ df["Yield"] = df["Yield"].astype(float)
 # Filter base years
 df = df[(df["Year"] >= 2010) & (df["Year"] <= 2022)]
 
-# ---------------- SIDEBAR ----------------
+#  sidebar added
 st.sidebar.header("🔎 Filters")
 
 country = st.sidebar.selectbox(
@@ -40,17 +41,17 @@ filtered = df[
     (df["Year"] <= year_range[1])
 ]
 
-# ---------------- TITLE ----------------
-st.title("🌾 Global Cereal Yield Dashboard")
+#Title
+st.title("  Global Cereal Yield Dashboard")
 
-# ---------------- METRICS ----------------
+
 col1, col2, col3 = st.columns(3)
 
 col1.metric("Country", country)
 col2.metric("Avg Yield", f"{filtered['Yield'].mean():,.0f}")
 col3.metric("Latest Year", int(filtered["Year"].max()))
 
-# ---------------- CHARTS ----------------
+
 chart1, chart2 = st.columns(2)
 
 with chart1:
@@ -78,7 +79,7 @@ with chart2:
     fig2.update_layout(xaxis_title="Year", yaxis_title="Yield")
     st.plotly_chart(fig2, use_container_width=True)
 
-# ---------------- TOP 10 ----------------
+# charts added
 st.subheader("Top 10 Countries (Latest Year)")
 
 latest_year = df["Year"].max()
@@ -104,7 +105,7 @@ fig3.update_traces(texttemplate="%{text:,.0f}", textposition="outside")
 
 st.plotly_chart(fig3, use_container_width=True)
 
-# ---------------- INSIGHTS ----------------
+
 st.subheader("Key Insights")
 
 st.write("""
