@@ -20,7 +20,7 @@ df["Yield"] = df["Yield"].astype(float)
 df = df[(df["Year"] >= 2010) & (df["Year"] <= 2022)]
 
 #  sidebar added
-st.sidebar.header("🔎 Filters")
+st.sidebar.header(" Filters")
 
 country = st.sidebar.selectbox(
     "Select Country",
