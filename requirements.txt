@@ -1,1 +1,7 @@
+streamlit
+pandas
+plotly
+openpyxl
 
+
+# Added requirements file
